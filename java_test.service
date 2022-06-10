@@ -1,0 +1,19 @@
+# This file mast be placed on directory /etc/systemd/system/
+# To protect against a restart loop on errors, the StartLimitBurst parameter (restart limit) was used
+# To start the service use the command  <sudo systemctl start java_test.service>
+
+
+[Unit]
+Description = Deeplay Java app test
+#Wants=
+#After=
+StartLimitBurst=5
+[Service]
+WorkingDirectory=/home/user/test2
+ExecStart=java -jar app.jar  /home/user/test2/some_out_file "Service is working!"
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=5
+[Install]
+WantedBy=multi-user.target
