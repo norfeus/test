@@ -1,5 +1,5 @@
-# deeplay_test
-Testing tasks from Deeplay
+# test
+Testing tasks
 
 The solution of the first task is in the file task1.sh
 
